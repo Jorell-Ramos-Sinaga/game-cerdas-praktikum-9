@@ -119,6 +119,70 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &193933885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193933887}
+  - component: {fileID: 193933886}
+  m_Layer: 0
+  m_Name: Navigation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &193933886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193933885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 009efcb1fd18882418d96392bbe0a4a8, type: 2}
+  m_BuildHeightMesh: 0
+--- !u!4 &193933887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193933885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +595,116 @@ Transform:
   - {fileID: 835441821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &823084057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823084059}
+  - component: {fileID: 823084058}
+  m_Layer: 0
+  m_Name: PCGManager_South
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &823084058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823084057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93f3c2b3cfbd6b47b8f46caf1a535e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PCGSpawner
+  useRandomSeed: 1
+  seed: 100
+  maxSeedHistory: 5
+  seedHistory: 
+  player: {fileID: 1163963601}
+  generatedRoot: {fileID: 982812225}
+  spawnAreaSize: {x: 24, y: 11}
+  spawnY: 0.8
+  enemyCount: 50
+  itemCount: 20
+  useDifficultyBudget: 1
+  difficultyBudget: 20
+  minDistanceFromPlayer: 5
+  checkRadius: 0.75
+  minimumSpacing: 1.5
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 64
+  useNavMeshValidation: 1
+  navMeshSampleDistance: 1
+  maxAttemptsPerObject: 50
+  enemyEntries:
+  - name: Common Red
+    prefab: {fileID: 7146447077054791808, guid: 37e2307eaab45b5468eaf126456f6ec2, type: 3}
+    weight: 15
+    yOffset: 0
+    cost: 1
+  - name: Uncommon Blue
+    prefab: {fileID: 8548718007630175734, guid: 66929d74a7769244c908fac69afea9f3, type: 3}
+    weight: 40
+    yOffset: 0
+    cost: 2
+  - name: Rare Yellow
+    prefab: {fileID: 4082876314292226459, guid: 514e8177e8cf1f6469581ca1475614ca, type: 3}
+    weight: 45
+    yOffset: 0
+    cost: 3
+  itemEntries:
+  - name: Coin
+    prefab: {fileID: 6218433771902406486, guid: 899799bb2b6f263469408e760fdd3454, type: 3}
+    weight: 65
+    yOffset: 0
+    cost: 1
+  - name: Health
+    prefab: {fileID: 8622034452314388764, guid: bdf73350d1d5a8644839fc4185798f74, type: 3}
+    weight: 25
+    yOffset: 0
+    cost: 2
+  - name: Rare
+    prefab: {fileID: 2439339223158033743, guid: e3a77b2ad25ca634fa17dc680165b74a, type: 3}
+    weight: 8
+    yOffset: 0
+    cost: 3
+  - name: Legendary
+    prefab: {fileID: 7317480406872395477, guid: c341c0d419329974881a39744aa326ea, type: 3}
+    weight: 2
+    yOffset: 0
+    cost: 3
+  currentSeed: 0
+  successfulEnemySpawns: 0
+  successfulItemSpawns: 0
+  currentBudgetSpent: 0
+  rejectedPositions: 0
+  spawnerName: Southh
+  autoGuiOffset: 1
+  guiPosition: {x: 10, y: 10}
+--- !u!4 &823084059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823084057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +866,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835441820}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &982812224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982812225}
+  m_Layer: 0
+  m_Name: GeneratedObjects_South
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982812225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982812224}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.83362, y: 0, z: 3.04005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1163963596
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +1048,7 @@ GameObject:
   - component: {fileID: 1253175133}
   - component: {fileID: 1253175134}
   m_Layer: 0
-  m_Name: PCGManager
+  m_Name: PCGManager_North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -858,7 +1063,7 @@ Transform:
   m_GameObject: {fileID: 1253175132}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -876,45 +1081,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93f3c2b3cfbd6b47b8f46caf1a535e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PCGSpawner
-  useRandomSeed: 0
-  seed: 12345
+  useRandomSeed: 1
+  seed: 100
+  maxSeedHistory: 5
+  seedHistory: 
   player: {fileID: 1163963601}
   generatedRoot: {fileID: 1271649207}
-  spawnAreaSize: {x: 24, y: 24}
-  spawnY: 0.5
-  enemyCount: 15
-  itemCount: 10
+  spawnAreaSize: {x: 24, y: 11}
+  spawnY: 0.8
+  enemyCount: 50
+  itemCount: 20
+  useDifficultyBudget: 1
+  difficultyBudget: 20
   minDistanceFromPlayer: 5
   checkRadius: 0.75
   minimumSpacing: 1.5
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64
+  useNavMeshValidation: 1
+  navMeshSampleDistance: 1
   maxAttemptsPerObject: 50
   enemyEntries:
   - name: Common Red
     prefab: {fileID: 7146447077054791808, guid: 37e2307eaab45b5468eaf126456f6ec2, type: 3}
-    weight: 60
+    weight: 80
+    yOffset: 0
+    cost: 1
   - name: Uncommon Blue
     prefab: {fileID: 8548718007630175734, guid: 66929d74a7769244c908fac69afea9f3, type: 3}
-    weight: 30
+    weight: 15
+    yOffset: 0
+    cost: 2
   - name: Rare Yellow
     prefab: {fileID: 4082876314292226459, guid: 514e8177e8cf1f6469581ca1475614ca, type: 3}
-    weight: 10
+    weight: 5
+    yOffset: 0
+    cost: 3
   itemEntries:
   - name: Coin
     prefab: {fileID: 6218433771902406486, guid: 899799bb2b6f263469408e760fdd3454, type: 3}
-    weight: 70
+    weight: 65
+    yOffset: 0
+    cost: 1
   - name: Health
     prefab: {fileID: 8622034452314388764, guid: bdf73350d1d5a8644839fc4185798f74, type: 3}
     weight: 25
+    yOffset: 0
+    cost: 2
   - name: Rare
     prefab: {fileID: 2439339223158033743, guid: e3a77b2ad25ca634fa17dc680165b74a, type: 3}
-    weight: 5
+    weight: 8
+    yOffset: 0
+    cost: 3
+  - name: Legendary
+    prefab: {fileID: 7317480406872395477, guid: c341c0d419329974881a39744aa326ea, type: 3}
+    weight: 2
+    yOffset: 0
+    cost: 4
   currentSeed: 0
   successfulEnemySpawns: 0
   successfulItemSpawns: 0
+  currentBudgetSpent: 0
   rejectedPositions: 0
+  spawnerName: North
+  autoGuiOffset: 1
+  guiPosition: {x: 10, y: 10}
 --- !u!1 &1271649206
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +1157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1271649207}
   m_Layer: 0
-  m_Name: GeneratedObjects
+  m_Name: GeneratedObjects_North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1293,4 +1525,7 @@ SceneRoots:
   - {fileID: 1163963601}
   - {fileID: 623459642}
   - {fileID: 1271649207}
+  - {fileID: 982812225}
   - {fileID: 1253175133}
+  - {fileID: 823084059}
+  - {fileID: 193933887}
